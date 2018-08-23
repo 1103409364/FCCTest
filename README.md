@@ -1,6 +1,4 @@
-# FCC-Front End Development Projects
-Algorithm-Scripting 算法题<br>
-项目预览：<br>
+# FCC-Front End Development Projects preview
 [Build a Tribute Page](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Tribute-Page/)<br>
 [Build a Personal Portfolio Webpage](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Personal-Portfolio-Webpage/) <br>
 [Design danmaku app](https://1103409364.github.io/FCC-Front-End-Projects/Design-danmaku-app/)<br>
