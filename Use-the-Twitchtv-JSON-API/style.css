@@ -1,0 +1,169 @@
+body {
+    background-color: #fffee9;
+}
+.myApp {
+    min-width: 350px;
+    max-width: 660px;
+/*     border: 1px solid #111; */
+    margin: 0 auto;
+    background-color: #794;
+    overflow: hidden;
+}
+/* 头部样式 */
+.head {
+    color: #fff;
+    height: 80px;
+    margin: 0;
+    position: relative;
+}
+.head h1 {
+    font-size: 2.5rem;
+    line-height: 80px;
+    margin:0;
+    padding-left: 3rem;
+    font-family: arial;
+}
+.status {
+    font-family: arial;
+    font-size: 12px;
+    color: #5f4a12;
+    font-weight: bold;
+}
+.status div{
+    background-color: #f8f5bc;
+/*     border: 1px solid #fff; */
+    padding: 3px 0 3px 20px;
+    width: 60px;
+    text-align: right;
+    cursor: pointer;
+}
+#allico:hover ,
+#onlineico:hover ,
+#offlineico:hover  {
+    right: 0;
+    transition: all 0.35s ease;
+}
+
+#allico,
+#onlineico,
+#offlineico{
+    position: absolute;
+}
+.allico {
+    top: 5px;
+    right: 0;
+}
+.allicoHide {
+    top: 5px;
+    right: -60px;
+    transition: all 0.35s ease;
+}
+.onlineico {
+    top: 30px;
+    right: 0;
+}
+.onlineicoHide {
+    top: 30px;
+    right: -60px;
+    transition: all 0.35s ease;
+}
+.offlineico {
+    top: 55px;
+    right: 0;
+}
+.offlineicoHide {
+    top: 55px;
+    right: -60px;
+    transition: all 0.35s ease;
+}
+
+
+#allico::after,
+#onlineico::after,
+#offlineico::after {
+    content:"";
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    position: absolute;
+    right: 65px;
+    top: 5px;
+}
+#onlineico::after {
+    background-color: #3434fc;
+}
+#allico::after {
+    background-color: #794;
+}
+#offlineico::after {
+    background-color: #888;
+}
+
+/*//公共样式*/
+*{
+    margin:0px;
+    padding:0px;
+    white-space:nowrap;
+}
+
+/*display区域*/
+#display{
+    background-color: #fffee9;
+    padding-top: 6px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+}
+#display > div.online{
+	background:#bed2c6;
+	margin-bottom:5px;
+    transition: all 0.35s ease;
+}
+#display > div.online a{
+	color:#e2a980; 
+}
+#display > div.offline{
+	background:#e2a980; 
+	margin-bottom:5px;
+}
+#display > div.offline a{
+	color:#bed2c6;
+}
+
+#display .all:after{
+	content: '';
+	display: block;
+	clear:both;
+}
+#display .all div{
+	float:left;
+	margin-right:30px;
+}
+#display > div .imgBox{
+	margin:7px;
+}
+#display img{
+	width:60px;
+	height:60px;
+	border-radius:50%;
+	border:3px solid white;
+}
+#display a{
+	line-height:84px;
+	text-decoration: none;
+}
+#display a:hover{
+	text-decoration:underline;
+}
+#display > div .link{
+	margin-left:20px;
+	width:110px;
+	text-align:center;
+}
+#display .des{
+	width: 380px;
+	height:80px;
+	overflow: hidden;
+	line-height:80px;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+}
