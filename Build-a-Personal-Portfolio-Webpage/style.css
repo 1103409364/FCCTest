@@ -1,7 +1,6 @@
 body {
     background-color: #808080;
     margin: 0;
-    transition: all 1s; 
 }
 
 header {
@@ -29,7 +28,7 @@ ul li a {
     text-decoration: none;
     color: #808080;
     font-weight: bold;
-    transition: all 1s; 
+    transition: all 0.5s linear; 
 }
 ul a:hover {
     text-decoration: none;
@@ -45,7 +44,7 @@ ul .active {
     background-color: #fff;
     box-shadow:2px 2px 2px #000;
     border-radius: 2px;
-    transition: all 1s; 
+    /* transition: all 1s;  */
 }
 
 header img {
