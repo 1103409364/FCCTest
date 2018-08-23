@@ -1,0 +1,53 @@
+#wrap {
+    width: 100%;
+    margin: 0 auto;
+    height: 80vh;
+    border-radius: 3px;
+}
+#danmaku {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    height: 80%;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 3px;
+    overflow: hidden;
+}
+button {
+    width: 80px;
+    height: 40px;
+    font-size: 1.2rem;
+    color: #f0ffff;
+    border-radius: 3px;
+    border: none;
+    background-color: #ff5050;
+    margin: 20px;
+}
+
+#inputBox {
+    box-sizing: border-box;
+    display: block;
+    height: 40px;
+    width: 400px;
+    border: none;
+    font-size: 1.2rem;
+    background-color: #add0ff;
+    margin: 20px auto;
+    margin-bottom: 0;
+    padding-left: 0.5em;
+    border-radius: 3px;
+}
+
+div {
+    text-align: center;
+}
+
+div p{
+    margin: 0;
+    padding: 0;
+    font-size:2em;
+    /* 禁止换行 */
+    white-space:nowrap; 
+    /* overflow:hidden;  */
+    /* text-overflow:ellipsis; */
+}
