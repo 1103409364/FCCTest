@@ -1,0 +1,171 @@
+body {
+    background-color: #5f9ea0;
+}
+.wiki {
+    box-sizing: border-box;
+    height: 200px;
+    width: 400px;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -100px -200px;
+    padding: 40px 0;
+    transition: all 0.55s ease;
+}
+.wikiMove {
+    box-sizing: border-box;
+    height: 120px;
+    width: 400px;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -200px;
+/*     border-bottom: 1px solid #fff; */
+    transition: all 0.55s ease;
+}
+#wikiApp a,
+.tip {
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.35s ease;
+}
+
+.tipHide {
+    opacity: 0;
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.85s ease;
+}
+
+.inputBox {
+    box-sizing: border-box;
+    margin: 20px;
+    height: 2.4rem;
+    width: 16rem;
+    border-radius: 1.2rem;
+    border: 0px solid #fff;
+/*     去掉焦点轮廓 */
+    outline: none;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    appearance:none;
+    transition: all 0.45s ease;
+/*     等待搜索图标的棒子消失 */
+    transition-delay: 0.35s;
+}
+
+.inputHide {
+    box-sizing: border-box;
+    width: 2.4rem;
+    padding: 0;
+    background-color: transparent;
+    border: 4px solid #fff;
+    cursor: pointer;
+    transition: all 0.55s ease;
+/*     加延迟,等待x消失动画 */
+    transition-delay: 0.2s;
+}
+input::-webkit-input-placeholder {
+    color: #fff;
+    text-align: center;
+}
+/* 搜索图标的棒子 */
+.beforeSearch::after {
+    content: "";
+    background-color: #fff;
+    height: 4px;
+    width: 1rem;
+    border-radius: 2px;
+    position: absolute;
+    left: 52%;
+    top: 58%;
+    transform:rotate(45deg);
+    transition: all 0.55s ease;
+    transition-delay: 0.5s;
+}
+.onSearch::after {
+    content: "";
+    background-color: #fff;
+    height: 0;
+    width: 0;
+    border-radius: 2px;
+    position: absolute;
+    left: 52%;
+    top: 58%;
+    transform:rotate(45deg);
+    transition: all 0.35s ease;
+}
+.esc::after,
+.esc::before {
+    content: "";
+    background-color: #5f9ea0;
+    height: 4px;
+    width: 1.2rem;
+    border-radius: 2px;
+    position: absolute;
+    left: 76%;
+    top: 48.5%;
+    transition: all 0.35s ease;
+    transition-delay: 0.6s;
+}
+.esc::after {    
+    transform:rotate(45deg);
+}
+.esc::before {
+    transform:rotate(135deg);
+}
+.escHide::after,
+.escHide::before {
+    content: "";
+    background-color: #5f9ea0;
+    height: 4px;
+    width: 0;
+    border-radius: 2px;
+    position: absolute;
+    left: 76%;
+    top: 48.5%;
+    transition: all 0.85s ease;
+}
+
+.result {
+    height: 80%;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 120px auto;
+/*     border: 1px solid #fff; */
+    transition: all 0.55s ease;
+/*     等待0.2s,结果数据加载后再显示 */
+    transition-delay: 0.2s;
+}
+.resultHide {
+    height: 80%;
+    max-width: 800px;
+    min-width: 300px;
+    margin: 1200px auto;
+    transition: all 0.55s ease;
+}
+
+#searchResult a {
+    color: #000;
+    text-decoration: none;
+}
+#searchResult p {
+    background-color: #fff;
+    margin: 8px;
+    box-shadow: 1px 1px 3px #233;
+    border-radius: 3px;
+    padding: 20px;
+}
+#searchResult p:hover {
+    border-left: 5px solid #f75c5c;
+}
+#searchResult p span {
+    color: #f75c5c;
+    font-weight: bold;
+}
