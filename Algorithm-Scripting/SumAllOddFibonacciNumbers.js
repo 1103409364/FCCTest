@@ -28,5 +28,4 @@ function sumFibs(num) {
     }
     return sum(arr);
 }
-
-sumFibs(8);
+console.log(sumFibs(18));
