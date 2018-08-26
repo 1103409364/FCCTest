@@ -22,10 +22,10 @@ function sym(args) {
         arrTemp = [];
     }
 
-    var arrTemp = arr[arr.length - 1];
+    arrTemp = arr[arr.length - 1];
     // 去除重复的元素
     console.log(arrTemp.filter(function (item, index) {
         return arrTemp.indexOf(item) == index;
     }));
 }
-sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 5, 5]);
+sym([1, 1, 2, 5], [2, 2, 3, 5], [3, 4, 9, 9, 9, 9, 5, 5]);
