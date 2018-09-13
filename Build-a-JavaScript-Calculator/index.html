@@ -12,8 +12,9 @@
     <div class="calculator">
         <h1>x calculator</h1>
         <div class="screen"></div>
-        <div class="key">
-            <ul>
+        <!-- 禁止复制按键 -->
+        <div class="key" onselectstart="return false">
+            <ul id="keyList">
                 <li>AC</li>
                 <li>CE</li>
                 <li>%</li>
@@ -37,6 +38,7 @@
             </ul>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>

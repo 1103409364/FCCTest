@@ -14,6 +14,10 @@ body {
     background-color: #86afff;
     margin-top: 10px;
     margin-bottom: 10px;
+    text-align: right;
+    line-height: 40px;
+    font-size: 1.5rem;
+    overflow: hidden;
 }
 .calculator {
     box-sizing: border-box;
@@ -42,7 +46,12 @@ body {
     color: #466db6;
     cursor: pointer;
 }
+.calculator li:last-of-type {
+    background-color: #db7a39;
+    color: #fff;
+}
 .calculator li:active {
     background-color: #466db6;
     color: #fff;
 }
+
