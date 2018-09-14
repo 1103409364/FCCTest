@@ -1,6 +1,8 @@
 var key = document.querySelector(".key");
 var screen = document.querySelector(".screen");
 var ans;
+var flag = false;
+
 key.addEventListener("click", calculate);
 
 function calculate(e) {
@@ -27,6 +29,11 @@ function calculate(e) {
         case "*":
         case "/":
         case ".":
+            if (flag) {
+                // 按下=时，在下次输入前清空屏幕
+                screen.innerHTML = "";
+                flag = false;
+            }
             screen.innerHTML += target.textContent;
             break;
         case "AC":
@@ -37,12 +44,19 @@ function calculate(e) {
             screen.innerHTML = screentext.slice(0, -1);
             break;
         case "=":
+            flag = true;
+            console.log(flag);
             if (screen.innerHTML) {
                 ans = eval(screen.innerHTML);
                 screen.innerHTML = ans;
             }
             break;
         case "Ans":
+            if (flag) {
+                // 按下=时，在下次输入前清空屏幕
+                screen.innerHTML = "";
+                flag = false;
+            }
             if (ans) {
                 screen.innerHTML += "ans";
             }
