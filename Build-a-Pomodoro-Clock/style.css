@@ -39,6 +39,7 @@ h1 {
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 .circle2 {
     margin: 0;
@@ -52,12 +53,16 @@ h1 {
 
 .back {
     width: 338px;
-    height: 338px;
-    background: #399951;
+    height: 348px;
+    background-color: #399951;
     /* 动态的上外边距。 */
-    margin-top: 100px;
+    margin-top: 338px;
+    /* 过度动画 */
+    transition: all 0.5s ease;
 }
 .state {
+    width: 300px;
+    text-align: center;
     margin: 0;
     box-sizing: border-box;
     text-align: center;
@@ -66,20 +71,26 @@ h1 {
     position: absolute;
     top: 60px;
     left: 50%;
-    margin-left: -114.828px;
+    margin-left: -150px;
 }
 
 .countdown {
+    width: 200px;
     margin: 0;
     box-sizing: border-box;
+    /* 使用等宽字体，防止数字乱动 */
+    font-family: 'Courier New', Courier, monospace;
     font-size: 4.5rem;
     text-align: center;
     font-weight: lighter;
     position: absolute;
     bottom: 60px;
     left: 50%;
-    margin-left: -88.7px;
+    margin-left: -100px;
+    text-align: center;
+
 }
+
 
 .leftMinus,
 .rightMinus,
