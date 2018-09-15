@@ -1,0 +1,86 @@
+body {
+    background-color: #4682b4;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.welcome {
+    display: none;
+    max-width: 500px;
+    height: 250px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 3px 3px 20px #000000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -125px;
+}
+
+.welcome h1 {
+    font-size: 2rem;
+}
+
+.welcome p {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.welcome span {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-family: sans-serif;
+    font-size: 6rem;
+    background-color: #cacaca;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.welcome .x {
+    color: #008000;
+}
+.welcome .o {
+    color: #ff0000;
+}
+
+.chessboard {
+    width: 500px;
+    height: 600px;
+    /* border: #000000 1px solid; */
+    margin: 15vh auto;
+}
+
+.chessboard h1 {
+    color: #fff;
+    margin: 0;
+    font-size: 3rem;
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+}
+.chessboard ul{
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+.chessboard li {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 6rem;
+    line-height: 154.6px;
+    margin: 6px;
+    list-style: none;
+    display: inline-block;
+    width: 154.6px;
+    height: 154.6px;
+    background-color: #fff;
+    box-shadow: 3px 3px 2px #444 inset;
+    /* 默认基线对齐 ，改成中线对其*/
+    vertical-align: middle;
+}
