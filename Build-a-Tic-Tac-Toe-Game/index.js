@@ -53,6 +53,7 @@ function reset() {
     for (var i = 0; i < chessList.length; i++) {
         chessList[i].textContent = "";
     };
+
     changePlayer(pOnePlay);
     chessboard.addEventListener("click", play);
 }
