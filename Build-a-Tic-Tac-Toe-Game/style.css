@@ -121,7 +121,6 @@ body {
     /* 默认基线对齐 ，改成中线对其*/
     vertical-align: middle;
     cursor: pointer;
-    transition: all 0.3s linear;
 }
 .chessboard li:active {
     /* background-color: #286494; */
