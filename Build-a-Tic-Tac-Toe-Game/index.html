@@ -9,31 +9,35 @@
 </head>
 
 <body>
+    <!-- 欢迎弹窗 -->
+    <div class="welcome">
+        <h1>player1 choose one of the characters</h1>
+        <p class="choose"><span class="x">X</span> OR <span class="o">O</span></p>
+    </div>
+    <!-- 结束弹窗 -->
+    <div class="gameOver">
+        <h1>Game Over</h1>
+        <p class="result">Who win?</p>
+        <button class="again">play again</button>
+        <button class="close">exit</button>
+    </div>
+    <!-- 棋盘主体，禁止复制 -->
+    <div class="chessboard" onselectstart="return false">
+        <h1>Tic Tac Toe Game</h1>
+        <p class="tip"></p>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
     <script src="index.js"></script>
 </body>
-<div class="welcome">
-    <h1>Choose one of the characters</h1>
-    <p><span class="x">X</span> OR <span class="o">O</span></p>
-</div>
-<div class="gameOver">
-    <h1>Game Over</h1>
-    <p class="result">Who win?</p>
-    <button>play again</button>
-</div>
-<!-- 棋盘禁止复制 -->
-<div class="chessboard" onselectstart="return false">
-    <h1>Tic Tac Toe Game</h1>
-    <ul>
-        <li>X</li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</div>
 
 </html>

@@ -6,7 +6,7 @@ body {
 }
 
 .welcome {
-    display: none;
+    /* display: none; */
     max-width: 500px;
     height: 250px;
     background-color: #fff;
@@ -17,6 +17,8 @@ body {
     top: 50%;
     margin-left: -250px;
     margin-top: -125px;
+    z-index: 1;
+    transition: all 0.3s linear;
 }
 
 .welcome h1 {
@@ -56,9 +58,10 @@ body {
 
 .chessboard {
     width: 500px;
-    height: 600px;
+    height: 630px;
     /* border: #000000 1px solid; */
-    margin: 15vh auto;
+    margin: 13vh auto;
+    transition: all 0.5s linear;
 }
 
 .chessboard h1 {
@@ -69,15 +72,28 @@ body {
     height: 100px;
     line-height: 100px;
 }
+
+.chessboard .tip {
+    color: #008000;
+    width: 80px;
+    height: 30px;
+    background: #cacaca;
+    margin: 0 0 0 6px;
+    box-shadow: 3px 3px 2px #444 inset;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 3px;
+}
 .chessboard ul{
     font-size: 0;
     margin: 0;
     padding: 0;
 }
 .chessboard li {
-    font-family: sans-serif;
     text-align: center;
-    font-size: 6rem;
+    font-size: 8rem;
     text-shadow: 3px 3px 2px #333;
     line-height: 154.6px;
     margin: 6px;
@@ -115,6 +131,7 @@ body {
     top: 50%;
     margin-left: -250px;
     margin-top: -125px;
+    z-index: 1;
 }
 
 .gameOver h1 {
@@ -152,3 +169,7 @@ body {
     box-shadow: none;
     /* box-shadow: 2px 2px 2px #444 inset; */
 }
+
+/* .chessboard {
+    filter: blur(8px);
+} */
