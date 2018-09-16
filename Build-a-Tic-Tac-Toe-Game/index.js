@@ -49,13 +49,10 @@ function showGameOver(winner) {
 function reset() {
     chessboard.setAttribute("style", "filter:blur(0px);");
     gameOver.setAttribute("style", "left: -500px;")
-    // welcome.setAttribute("style", "top: 50%;")
     // 清空棋盘
     for (var i = 0; i < chessList.length; i++) {
         chessList[i].textContent = "";
     };
-    // 重设O为先手
-    // chooseO = true;
     changePlayer(pOnePlay);
     chessboard.addEventListener("click", play);
 }
