@@ -1,0 +1,169 @@
+body {
+    background-color: #ff7474;
+    margin: 0;
+}
+
+.wrap {
+    width: 50vh;
+    height: 50vh;
+    margin: 25vh auto;
+    background-color: #fff;
+    /* 去除空格 */
+    font-size: 0;
+    border: 1vh solid #fff;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: 0 0 15px #161616;
+    border-radius: 50%;
+}
+
+.green,
+.red,
+.blue,
+.yellow {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    /* 默认基线对齐，改为中线 */
+    vertical-align: middle;
+    border: 1vh solid #fff;
+    box-sizing: border-box;
+}
+
+.green {
+    background-color: #7cbb00;
+    border-top-right-radius: 100%;
+    cursor: pointer;
+}
+
+.red {
+    background-color: #f05221;
+    border-top-left-radius: 100%;
+}
+
+.blue {
+    background-color: #00a5f0;
+    border-bottom-left-radius: 100%;
+}
+.yellow {
+    background-color: #ffb902;
+    border-bottom-right-radius: 100%;
+}
+
+.control {
+    text-align: center;
+
+    width: 50%;
+    height: 50%;
+    border: 1vh solid #fff;
+    background-color: #ff7474;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    box-sizing: border-box;
+    border-radius: 100%;
+}
+
+.control h1{
+    font-size: 5vh;
+    margin: 0;
+    padding-top: 12%;
+    width: 100%;
+    height: 35%;
+    vertical-align: middle;
+}
+
+.control sup {
+    font-size: 1rem;
+}
+.control div {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5%;
+}
+.countScreen {
+    font-size: 2vh;
+    font-weight: bold;
+    width: 30%;
+    height: 15%;
+    background-color: #161616;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #ff0000;
+    position: relative;
+}
+.countScreen::after {
+    color: #000;
+    font-size: 1.5vh;
+    font-weight: normal;
+    content: "COUNT";
+    position: absolute;
+    left: 0.5vh;
+    top: 3.5vh;
+}
+
+.start {
+    width: 10%;
+    height: 10%;
+    background-color: #ff0000;
+    border-radius: 50%;
+    border: 0.2vh solid #fff;
+    box-shadow: 3px 3px 3px #333;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+.start:active {
+    box-shadow: none;
+}
+.start::after {
+    color: #000;
+    font-size: 1vh;
+    content: "START";
+    position: absolute;
+    left: -1vh;
+    top: 2.5vh;
+}
+.strict {
+    width: 10%;
+    height: 10%;
+    background-color: #ffb902;
+    border-radius: 50%;
+    border: 0.2vh solid #ffffff;
+    box-shadow: 3px 3px 2px #333;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+.strict:active {
+    box-shadow: none;
+}
+.strict::after {
+    color: #000;
+    font-size: 1vh;
+    content: "STRICT";
+    position: absolute;
+    left: -1vh;
+    top: 2.5vh;
+}
+.control .on-off {
+    width: 19%;
+    height: 10%;
+    border-radius: 4px;
+    background-color: #000000;
+    margin-top: 10%;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.on-off .btn {
+    margin: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 4px;
+    background-color: #ff0000;
+    box-sizing: border-box;
+    border: 2px solid #000;
+}
