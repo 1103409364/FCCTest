@@ -17,10 +17,10 @@ body {
     border-radius: 50%;
 }
 
-.green,
-.red,
-.blue,
-.yellow {
+#green,
+#red,
+#blue,
+#yellow {
     width: 50%;
     height: 50%;
     display: inline-block;
@@ -30,22 +30,21 @@ body {
     box-sizing: border-box;
 }
 
-.green {
+#green {
     background-color: #7cbb00;
     border-top-right-radius: 100%;
-    cursor: pointer;
 }
 
-.red {
+#red {
     background-color: #f05221;
     border-top-left-radius: 100%;
 }
 
-.blue {
+#blue {
     background-color: #00a5f0;
     border-bottom-left-radius: 100%;
 }
-.yellow {
+#yellow {
     background-color: #ffb902;
     border-bottom-right-radius: 100%;
 }
@@ -84,14 +83,17 @@ body {
     margin: 5%;
 }
 .countScreen {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    vertical-align: middle;
     font-size: 2vh;
     font-weight: bold;
     width: 30%;
     height: 15%;
+    padding-top: 0.4vh;
     background-color: #161616;
     border-radius: 4px;
     box-sizing: border-box;
-    color: #ff0000;
+    color: #990000;
     position: relative;
 }
 .countScreen::after {
@@ -117,6 +119,7 @@ body {
 }
 .start:active {
     box-shadow: none;
+    background-color: #c90000;
 }
 .start::after {
     color: #000;
@@ -139,6 +142,18 @@ body {
 }
 .strict:active {
     box-shadow: none;
+    background-color: #ce9403;
+}
+.stricttip {
+    box-sizing: border-box;
+    width: 1vh;
+    height: 1vh;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #000;
+    position: absolute;
+    left: 0.4vh;
+    top: -1.6vh;
 }
 .strict::after {
     color: #000;
@@ -159,13 +174,34 @@ body {
     text-align: left;
     cursor: pointer;
 }
-
+.on-off {
+    position: relative;
+}
 .on-off .btn {
     margin: 0;
     width: 50%;
     height: 100%;
     border-radius: 4px;
-    background-color: #ff0000;
+    background-color: #d3d3d3;
     box-sizing: border-box;
     border: 2px solid #000;
+}
+
+.on-off::before {
+    content: "OFF";
+    color: #000;
+    font-size: 1.5vh;
+    font-weight: bold;
+    position: absolute;
+    left: -3.2vh;
+    top: 0.1vh;
+}
+.on-off::after {
+    content: "ON";
+    color: #000;
+    font-size: 1.5vh;
+    font-weight: bold;
+    position: absolute;
+    right: -2.8vh;
+    top: 0.1vh;
 }

@@ -10,17 +10,28 @@
 </head>
 
 <body>
+    <audio id="audio1" src="https://www.freecodecamp.cn/images/simonSound1.mp3"></audio>
+    <!--416ms-->
+    <audio id="audio2" src="https://www.freecodecamp.cn/images/simonSound2.mp3"></audio>
+    <!--416ms-->
+    <audio id="audio3" src="https://www.freecodecamp.cn/images/simonSound3.mp3"></audio>
+    <!--416ms-->
+    <audio id="audio4" src="https://www.freecodecamp.cn/images/simonSound4.mp3"></audio>
+    <!--520ms-->
+
     <div class="wrap">
-        <div class="red one"></div>
-        <div class="green two"></div>
-        <div class="blue three"></div>
-        <div class="yellow four"></div>
+        <div id="red" class="color"></div>
+        <div id="green" class="color"></div>
+        <div id="blue" class="color"></div>
+        <div id="yellow" class="color"></div>
         <div class="control">
             <h1>Simon<sup>&reg;</sup></h1>
-
-            <div class="countScreen">--</div>
+            <div class="countScreen">- -</div>
             <div class="start"></div>
-            <div class="strict"></div>
+            <!-- 严格模式按钮：错一次从头开始 -->
+            <div class="strict">
+                <div class="stricttip"></div>
+            </div>
             <div class="on-off">
                 <div class="btn"></div>
             </div>
