@@ -10,3 +10,4 @@ preview:<br>
 [Build a JavaScript Calculator](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-JavaScript-Calculator)<br>
 [Build a Pomodoro Clock](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Pomodoro-Clock)<br>
 [Build a Tic Tac Toe Game](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Tic-Tac-Toe-Game)<br>
+[Build a Simon Game](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Simon-Game)<br>
