@@ -69,24 +69,25 @@ function gameStart() {
     reset();
     var step = 0;
     var rhythmArr = creatRandomArr();
-    var intervalId2 = setInterval(function () {
-        autoPlay(rhythmArr[step]);
-        playerArr = [];
-        setTimeout(() => {
-            if (checkResult(rhythmArr[step], playerArr)) {
-                step++;
-            }
-        }, 5000);
-        //超过5s
-        if (step > 20) {
-            clearInterval(intervalId2);
-            alert("你赢了！！");
-            return;
-        }
-        console.log(rhythmArr[step]);
-        console.log(playerArr);
+    console.log(rhythmArr);
+    // autoPlay(rhythmArr[step]);
+    // var intervalId2 = setInterval(function () {
+    //     autoPlay(rhythmArr[step]);
 
-    }, 2000);
+    //     if (checkResult(rhythmArr[step], playerArr)) {
+    //         step++;
+    //     }
+
+    //     //超过5s
+    //     if (step > 20) {
+    //         clearInterval(intervalId2);
+    //         alert("你赢了！！");
+    //         return;
+    //     }
+    //     console.log(rhythmArr[step]);
+    //     console.log(playerArr);
+
+    // }, 5000);
     wrap.addEventListener("click", play);
     for (var i = 0; i < keyboard.length; i++) {
         keyboard[i].setAttribute("style", "cursor: pointer")
@@ -148,15 +149,15 @@ function gameOnOff() {
         reset();
     }
 }
-// 创建20个随机数数组
+// 创建20个长度从1到20的随机数组组成的二维数组
 function creatRandomArr() {
+    var arr = [];
     var rhythmArr = [];
     for (var i = 0; i < 20; i++) {
-        var arr = [];
-        for (var j = 0; j <= i; j++) {
-            arr.push(Math.floor(Math.random() * 4));
-        }
-        rhythmArr.push(arr);
+        arr.push(Math.floor(Math.random() * 4));
+    }
+    for (var j = 0; j < 20; j++) {
+        rhythmArr[j] = arr.slice(0, j + 1);
     }
     return rhythmArr;
 }
