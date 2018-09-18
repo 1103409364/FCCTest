@@ -116,10 +116,11 @@ function isRight(step, time) {
         if (strictOn) {
             gameStart();
         }
+        // 出错时播放音频，重播序列
         errorAudio();
         setTimeout(() => {
             timeoutPlay(step, rhythmArr[step]);
-        }, 1000);
+        }, 500);
 
         return false;
     } else {
@@ -234,6 +235,7 @@ function aiPlay(num) {
         setTimeout(() => {
             red.setAttribute("style", "background-color:#f05221");
         }, 300);
+        //播放声音
         audio0.play();
     }
     if (num === 1) {
