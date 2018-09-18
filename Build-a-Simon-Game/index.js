@@ -1,3 +1,5 @@
+//细节还需完善，比如：计算机自动播放时禁止操作
+
 var wrap = document.querySelector(".wrap");
 var keyboard = document.querySelectorAll(".color");
 var count = document.querySelector(".countScreen");
