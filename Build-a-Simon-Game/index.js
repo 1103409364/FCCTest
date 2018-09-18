@@ -11,13 +11,22 @@ var on_off = document.querySelector(".on-off");
 var startBtn = document.querySelector(".start");
 // 玩家按下按键时生成数组
 var playerArr = [];
+// 表示第几个序列
+var step = 0;
+var rhythmArr;
+var timeout = 2000;
+// 点击次数
+var time = 0;
+
 
 
 on_off.addEventListener("click", gameOnOff);
 //玩家按下按键
 function play(e) {
     var target = e.target;
+    // 条件按下的是扇形色块
     if (target.className == "color") {
+        time++;
         if (target.id == "red") {
             // 按下变色，一段时间后恢复
             target.setAttribute("style", "background-color:#ff0000");
@@ -56,8 +65,64 @@ function play(e) {
             audio3.play();
             playerArr.push(3);
         }
+        // console.log(playerArr);
+        // console.log(rhythmArr[step]);
+        // 按对触发下一次
+        if (checkResult(rhythmArr[step], playerArr)) {
+            step++;
+            // 每个序列通过之后重置点击次数
+            time = 0;
+            count.textContent = step;
+            playerArr = [];
+            if (step < 20) {
+                var timeoutId = timeoutPlay(step, rhythmArr[step]);
+
+            }
+        }
+        // console.log(rhythmArr[step]);
+        // time = 0时已经切换到下一序列
+        if (time > 0) {
+            if (!isRight(step, time)) {
+                time = 0;
+                console.log("err");
+            }
+
+        }
+        // step从0开始
+        if (step >= 19) {
+            setTimeout(() => {
+                count.textContent = "winner!!";
+                disable();
+            }, 1000);
+        }
     }
-    console.log(playerArr);
+
+}
+//每次按下扇形按键检测是否按错
+function isRight(step, time) {
+    // 每点一次判断正误
+    console.log(time);
+    console.log(step);
+    console.log(playerArr[time - 1], rhythmArr[step][time - 1]);
+
+    if (playerArr[time - 1] != rhythmArr[step][time - 1]) {
+        // 重置玩家数组
+        playerArr = [];
+        time = 0;
+        // 严格模式,从头开始
+        console.log(strictOn);
+        if (strictOn) {
+            gameStart();
+        }
+        errorAudio();
+        setTimeout(() => {
+            timeoutPlay(step, rhythmArr[step]);
+        }, 1000);
+
+        return false;
+    } else {
+        return true;
+    }
 }
 // 错误提示音
 function errorAudio() {
@@ -67,31 +132,12 @@ function errorAudio() {
 // 打开扇形按键功能,开始游戏
 function gameStart() {
     reset();
-    var step = 0;
-    var rhythmArr = creatRandomArr();
-    console.log(rhythmArr);
-    // autoPlay(rhythmArr[step]);
-    // var intervalId2 = setInterval(function () {
-    //     autoPlay(rhythmArr[step]);
+    rhythmArr = creatRandomArr();
+    // 游戏开始，创建一组序列
+    timeoutPlay(step, rhythmArr[step]);
 
-    //     if (checkResult(rhythmArr[step], playerArr)) {
-    //         step++;
-    //     }
+    able();
 
-    //     //超过5s
-    //     if (step > 20) {
-    //         clearInterval(intervalId2);
-    //         alert("你赢了！！");
-    //         return;
-    //     }
-    //     console.log(rhythmArr[step]);
-    //     console.log(playerArr);
-
-    // }, 5000);
-    wrap.addEventListener("click", play);
-    for (var i = 0; i < keyboard.length; i++) {
-        keyboard[i].setAttribute("style", "cursor: pointer")
-    }
     //--闪烁效果
     count.setAttribute("style", "color: #ff0000;");
     setTimeout(() => {
@@ -108,8 +154,19 @@ function gameStart() {
     }, 1000);
 }
 
+//一段时间后播放
+function timeoutPlay(step, rhythm) {
+    // disable();
+    var timeout = step * 800 + 1000;
+    setTimeout(() => {
+        autoPlay(rhythm);
+    }, timeout);
+
+}
 // 重置
 function reset() {
+    step = 0;
+    playerArr = [];
     count.textContent = "- -";
     // 计数器变暗
     count.setAttribute("style", "color: #990000;");
@@ -125,26 +182,31 @@ function strictOnOff() {
         stricttip.setAttribute("style", "background-color: #000");
     }
 }
-// 禁用按键
-function disable() {
-    wrap.removeEventListener("click", play)
-    startBtn.removeEventListener("click", gameStart);
-    strict.removeEventListener("click", strictOnOff);
-    for (var i = 0; i < keyboard.length; i++) {
-        keyboard[i].setAttribute("style", "cursor: normal")
-    };
+//启用扇形按键
+function able() {
+    wrap.addEventListener("click", play);
 }
-// 总开关。重置游戏
+
+// 禁用扇形按键
+function disable() {
+    wrap.removeEventListener("click", play);
+}
+// 总开关。重置游戏.启用和禁用start，strict
 function gameOnOff() {
     if (!gameOn) {
         on_off.setAttribute("style", "text-align: right;");
         startBtn.addEventListener("click", gameStart);
         strict.addEventListener("click", strictOnOff);
+
         gameOn = true;
-        // able();
     } else {
+        startBtn.removeEventListener("click", gameStart);
+        strict.removeEventListener("click", strictOnOff);
         on_off.setAttribute("style", "text-align: left;");
+        stricttip.setAttribute("style", "background-color: #000");
         gameOn = false;
+        strictOn = false;
+        // 禁用扇形按键
         disable();
         reset();
     }
@@ -164,13 +226,11 @@ function creatRandomArr() {
 
 
 function aiPlay(num) {
-    // disable();??
     if (num === 0) {
         // 按下变色，一段时间后恢复
         red.setAttribute("style", "background-color:#ff0000");
         setTimeout(() => {
             red.setAttribute("style", "background-color:#f05221");
-
         }, 300);
         audio0.play();
     }
@@ -210,7 +270,7 @@ function autoPlay(rhythm) {
             return 0;
         }
         i++
-    }, 1000)
+    }, 500)
 }
 //比较数组是否相同
 function checkResult(arr1, arr2) {

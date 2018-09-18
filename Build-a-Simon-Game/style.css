@@ -28,6 +28,7 @@ body {
     vertical-align: middle;
     border: 1vh solid #fff;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 #green {
