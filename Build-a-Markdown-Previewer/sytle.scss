@@ -1,0 +1,52 @@
+$width: 1200px;
+$height: 600px;
+
+
+.container {
+  width: $width;
+  height: 800px;
+  margin: 0 auto;
+  .inputArea,
+  .markdownShower {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    display: block;
+    float: left;
+    width: 45%;
+    min-width: 400px;
+    resize: vertical;
+    margin: 10px;
+    padding: 10px;
+  }
+  .inputArea {
+    height: $height;
+  }
+  .markdownShower {
+    height: 100%;
+
+  }
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0;
+  }
+  .container {
+    width: 100%;
+    margin: 0;
+    .inputArea,
+    .markdownShower {
+      margin: 0 0 10px 0;
+      width: 100%;
+      background-color:lightblue;
+    }
+  }
+}

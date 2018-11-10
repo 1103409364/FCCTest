@@ -1,0 +1,50 @@
+.container {
+  width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+}
+.container .inputArea,
+.container .markdownShower {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  display: block;
+  float: left;
+  width: 45%;
+  min-width: 400px;
+  resize: vertical;
+  margin: 10px;
+  padding: 10px;
+}
+.container .inputArea {
+  height: 600px;
+}
+.container .markdownShower {
+  height: 100%;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+  .container .inputArea,
+  .container .markdownShower {
+    margin: 0 0 10px 0;
+    width: 100%;
+    background-color: lightblue;
+  }
+}
+
+/*# sourceMappingURL=sytle.css.map */

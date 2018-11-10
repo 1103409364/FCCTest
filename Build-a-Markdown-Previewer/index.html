@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Build a Markdown Previewer</title>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.5.1/marked.min.js"></script>
+    <link rel="stylesheet" href="sytle.css">
+</head>
+
+<body>
+    <div class="container" id="markdownApp"></div>
+
+    <script type="text/babel">
+        class InputArea extends React.Component {
+            constructor (props) {
+                super(props);
+                this.state = {
+                    value: this.props.defaultValue
+                }
+            }
+            handleInputChange (e) {
+                var value = e.target.value;
+                this.setState ({
+                    value: value
+
+                })
+                if (typeof this.props.handleInput == "function") {
+                    this.props.handleInput(value);
+                    console.log(11);
+                    
+                }
+            }
+            render() {
+                return (
+                    <textarea 
+                        className = "inputArea"
+                        rows="22"
+                        value = {this.state.value}
+                        onChange = {this.handleInputChange.bind(this)} />
+                );
+            }
+        }
+        class MarkdownShower extends React.Component {
+            rawMarkup(value) {
+                // 使用Markdown的解析引擎的marked方法
+                // sanitize
+                // 它是一个布尔值，默认为false。
+                // 对输出进行过滤（清理），将忽略任何已经输入的html代码（标签）
+                // 使用说明 https://www.cnblogs.com/djtao/p/6224399.html
+                var rawMarkup = marked(value, {sanitize: true});
+                console.log(rawMarkup);
+                return { __html: rawMarkup };
+            }
+            render() {
+                return (
+                    <div className = "markdownShower clearfix" dangerouslySetInnerHTML={this.rawMarkup(this.props.value)} />
+                )
+            }
+        }
+
+
+        class MarkdownApp extends React.Component {
+            constructor (props) {
+                super(props);
+                this.state = {
+                    value: ""
+                }
+            }
+            initialState(){
+                this.setState ({
+                    value:"Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\nSpain.\n\n *[Herman Fassett](https://freecodecamp.com/hermanfassett)*"
+                })
+            }
+            handleInput(value) {
+                this.setState ({
+                    value: value
+                })
+            }
+            componentWillMount () {
+                this.initialState()
+            }
+            render() {
+                return (
+                    <div>
+                        <InputArea handleInput = {this.handleInput.bind(this)} defaultValue = {this.state.value}/>
+                        <MarkdownShower value={this.state.value}/>
+                    </div>
+                )
+         
+            }
+        }
+
+        ReactDOM.render(
+            <MarkdownApp />,
+            document.getElementById("markdownApp")
+        )
+    </script>
+</body>
+
+</html>
