@@ -13,4 +13,4 @@ preview:<br>
 [Build a Simon Game](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Simon-Game)<br>
 
 React:<br>
-[Build a Markdown Previewer](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Markdown-Previewer)<br>
+[Build a Markdown Previewer](https://1103409364.github.io/FCC-Front-End-Projects/Build-a-Markdown-Previewer/index.html)<br>
